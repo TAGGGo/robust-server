@@ -1,0 +1,3 @@
+sudo service postgresql restart
+sudo PGPASSWORD=123456 psql -h localhost -d stockexchange -U postgres -p 5432 -a -q -f /home/ct265/erss-hwk4-hw250-ct265/docker-deploy/db.sql
+python3 src/stockserver/server.py

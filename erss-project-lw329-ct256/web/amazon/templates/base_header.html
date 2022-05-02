@@ -1,0 +1,57 @@
+{% load static %}
+<header id="header" class="header">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a href="/index" class="navbar-brand">
+        <img src=" {% static 'img/logo.png' %} " alt="company logo" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#myNavbar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item mx-2 nav-active">
+            <a href="/index" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="/products" class="nav-link">Products</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="/singleProduct" class="nav-link">Single Product</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="/store" class="nav-link">Store</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-icons d-none d-lg-flex">
+        <!-- single icon -->
+        <div class="navbar-icon mx-2"><i class="fas fa-search"></i></div>
+        <!-- end of single icon -->
+        <!-- single icon -->
+        <a href="/store" class="navbar-icon mx-2 navbar-cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <div class="cart-items">2</div>
+        </a>
+        <!-- end of  single icon -->
+        <a href="/account" class="navbar-icon mx-2"><i class="fas fa-user"></i></a>
+      </div>
+    </nav>
+    <!-- end of navbar -->
+    <div class="banner d-flex align-items-center pl-3 pl-lg-5">
+      <div>
+        <h1 class="text-slanted text-capitalize mb-0">
+          Minimalist
+        </h1>
+        <h1 class="text-lowercase font-weight-bold">
+          interior style
+        </h1>
+        <a href="#" class="btn btn-yellow"> view collection </a>
+      </div>
+    </div>
+  </header>

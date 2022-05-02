@@ -1,0 +1,16 @@
+1. web static file loading path needs to take care. Because, this project uses
+lots of pictures for the frontend, and sometimes it would report errors that said
+it could not find the correct static file, like pictures or css. Then we figure out 
+that we need to configure static file path in the settings.py.
+
+2. Database picture store problem. At first, I thought database would store the picture
+in a binary format. However, I found that the database actually stored the pciture' path 
+name. 
+
+3. Frontend send POST request must attack CSRF token. Otherwise, the backend of Django 
+would report missing CSRF token.
+
+4. Proto acks and seq number problem. Both amazon server and world server must send ack, and 
+seq number to make sure the request has been recevied.
+
+

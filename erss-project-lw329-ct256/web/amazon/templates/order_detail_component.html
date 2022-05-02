@@ -1,0 +1,70 @@
+<section class="totals py-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-uppercase text-center">
+                <div class="row">
+                    <div class="col-10 mx-auto text-center">
+                        <h2 class="text-uppercase">
+                         Products In Your Current Order 
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- single column -->
+                    <div class="col-10 mx-auto col-md-4">
+                        <p class="text-uppercase">
+                            products
+                        </p>
+                    </div>
+                    <!-- end of single column -->
+                    <!-- single column -->
+                    <div class="col-10 mx-auto col-md-4">
+                        <p class="text-uppercase">
+                            name of products
+                        </p>
+                    </div>
+                    <!-- end of single column -->
+                    <!-- single column -->
+                    <div class="col-10 mx-auto col-md-4">
+                        <p class="text-uppercase">
+                            price
+                        </p>
+                    </div>
+                    <!-- end of single column -->
+                    <!-- single column -->
+                    <!-- end of single column -->
+                    <!-- single column -->
+                 
+                    <!-- end of single column -->
+                </div>
+                <hr>
+                <div class="row my-3 align-items-center">
+
+                <!-- end of columns -->
+                {% for orderProduct in orderProducts %}
+                <div class="col-10 mx-auto col-md-4 my-3">
+                    <img src="{{orderProduct.photo}}" alt="" class="img-fluid">
+                </div>
+                <div class="col-10 mx-auto col-md-4">
+                    <p class="text-uppercase">
+                        {{orderProduct.name}}
+                    </p>
+                </div>
+                <div class="col-10 mx-auto col-md-4">
+                    <p class="text-uppercase">
+                        {{orderProduct.price}}$
+                    </p>
+                </div>
+             
+               
+                {% endfor %}
+                </div>
+                <!-- end of all about product -->
+                <!-- all about product -->
+
+                <!-- end of all about product -->
+            </div>
+        </div>
+    </div>
+    </div>
+</section>

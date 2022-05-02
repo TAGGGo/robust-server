@@ -1,0 +1,27 @@
+{% load mathfilters %}
+
+{% for cartProduct in cartProducts %}
+<div class="col-10 mx-auto col-md-2 my-3">
+    <img src="{{cartProduct.photo}}" alt="" class="img-fluid">
+  </div>
+  <div class="col-10 mx-auto col-md-4">
+    <p class="text-uppercase">
+      {{cartProduct.name}}
+    </p>
+  </div>
+  <div class="col-10 mx-auto col-md-2">
+    <p class="text-uppercase">
+      {{cartProduct.price}}$
+    </p>
+  </div>
+  <div class="col-10 mx-auto col-md-2">
+    <div class="d-flex justify-content-center align-items-center">
+    <span class="btn btn-black mx-1">{{cartProduct.count}}</span>
+    </div>
+  </div>
+  <div class="col-10 mx-auto col-md-2">
+    <p class="text-uppercase">
+      {{ cartProduct.price|mul:cartProduct.count}}
+    </p>
+  </div>
+{% endfor %}

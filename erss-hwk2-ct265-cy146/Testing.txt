@@ -1,0 +1,23 @@
+Normal Cases:
+1. HTTPS: https://www.youtube.com
+2. GET: http://www.cad.zju.edu.cn/index.html
+3. POST: http://httpbin.org/forms/post
+4. Chunked Transfer Encoding & no-cache&no-store: http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
+5. Large Data: http://www.dxzy163.com/
+6. Content Length Transfer & Last-Modified: http://www.usaco.org/current/images/usaco_logo.png
+7. Max-age=259200: http://www.cad.zju.edu.cn/templets/default/imgzd/ENGLISH.jpg
+8. No-cache(Need Validation): http://pcookie.cnzz.com/app.gif?&cna=3IWUGjh7zTsCAZgDRX6Kl/7x
+(Double load 6-8 for checking caching)
+
+Edge Cases:
+1. Malformed Request(400 Bad Request): http://www.qejroqjwasdfoqweijr.com/
+2. Page Not Found(404 Not Found): http://www.cad.zju.edu.cn/index1.html
+3. HTTP->HTTPS(301 Move Permanently): http://www.artsci.utoronto.ca/futurestudents
+4. Unsupported Method(501 Not Implemented):
+echo -e "GETT http://www.cad.zju.edu.cn/index.html HTTP/1.1\r\nHost: www.cad.zju.edu.cn\r\n\r\n" | nc IP_ADDRESS 12345
+5. Malformed Request(400 Bad Request):
+echo -e "http://www.cad.zju.edu.cn/index.html HTTP/1.1\r\nHost: www.cad.zju.edu.cn\r\n\r\n" | nc IP_ADDRESS 12345
+6. Malformed Request(400 Bad Request):
+echo -e "GET http://www.cad.zju.edu.cn/ index.html HTTP/1.1\r\nHost: www.cad.zju.edu.cn\r\n\r\n" | nc IP_ADDRESS 12345
+7. If cannot connect to server, receive 502
+(Please change IP_ADDRESS to machine that launch program)

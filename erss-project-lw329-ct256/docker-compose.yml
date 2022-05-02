@@ -1,0 +1,32 @@
+version: "3.3"
+   
+services:
+  db:
+    image: postgres:14
+    command: ["postgres", "-c", "log_statement=mod"]
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=passw0rd123
+    ports:
+      - "5432:5432"
+    volumes:
+          - ./postgres-data:/var/lib/postgresql/data
+  web:
+    build: ./web
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=passw0rd123
+      - AMAZON_SERVER_SWITCH=on
+    command: ['/code/wait-for-it.sh', 'db', 'python', 'manage.py', 'runserver', '0.0.0.0:8000']
+    # command: bash -c "python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+      - "23456:23456"
+      - "34567:34567"
+      - "5555:5555"
+    depends_on:
+      - db

@@ -1,0 +1,23 @@
+1. NICE GUI DESIGN
+A facy commecial-class web template is used to enhance user experience
+
+2. CATAGORY IS ENCLOSED
+We add a few catagories to make the amazon closer to real world shopping application
+
+3. ADD CANCEL ORDER
+We add a cancel choice that will easily cancel a order if the package has not yet been dilivered
+
+4. EMAIL NOTRIFICATION
+We send email if you place your order
+
+5. SHOPPING CART 
+We have a database storing what users are willing to purchase and they can make modification before they place the order
+
+6. TIMING
+Time of status change(created, packed, loaded, delivered) has been recorded in detail
+
+7. PROFILE UPDATE/MODIFY
+Users can easliy modify their location and newly-placed orders will have new address accordingly
+
+8. SUBSCRIPTION
+Users can subscribe on the website to choose to get notificaiton of further activities like promotions if they need them

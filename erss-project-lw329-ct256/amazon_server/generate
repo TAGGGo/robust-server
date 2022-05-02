@@ -1,0 +1,3 @@
+protoc -I=proto --python_out=./ proto/world_amazon.proto
+protoc -I=proto --python_out=./ proto/world_ups.proto
+protoc -I=proto --python_out=./ proto/amazon_ups.proto

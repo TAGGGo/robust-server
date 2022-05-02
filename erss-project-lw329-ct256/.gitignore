@@ -1,0 +1,7 @@
+__pycache__
+# ignore migrations
+migrations
+web/media/*
+amazon_server/runserver
+amazon_server/test.py
+world_simulator_exec/*

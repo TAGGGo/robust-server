@@ -1,0 +1,29 @@
+Danger Log
+
+The exception guarantee we made:
+Overall our program is in a no-throw guarantee, which means operations are guaranteed to succeed and 
+satisfy all requirements even in exceptional situation. For example, our key function handle_request()
+is no-throw guarantee function. It catches all exceptions then close the file descriptor and exit.
+While, for the functions sending and receiving buffer is basic guarantee, which means if an exception occurs, 
+no memory is leaked and the object is still in a usable state. We would send different signals to the client
+based on the errors. Under the protection, the client would not be influenced under most of the situations.
+
+How we handle external failure:
+1. Sometimes the request is invalid, when we detect the Http request is invalid we would not sending 
+anything to the server. We would send a 400 Bad Request to the client on behalf of the server.
+2. Sometimes the request is valid, but the request is not handlable, we would send a 501 NotImplemented signal
+to the clien.
+3. Sometimes the response is invalid, when we detect the Http response is invalid our proxy would send
+a error message to the client. For this case we would send a 502 Bad Gateway to the client.
+4. Our proxy should be resilent to handle all the situation. If there is a data our proxy could not handle,
+the thread should not crash.
+
+
+Further Improvements:
+1. We stored all the cache data inside the memory. If we could work on some data persitence for the proxy
+server that would much better for the stability.
+2. For the concurrency part we only use basic "mutex" to achieve the thread-safe. However, we could apply 
+more advance mechanism like semaphore.
+3. Fraud client and server should also be a problem that is worth exploring. Currently we did nothing to check
+the identification of the clients and the servers.
+

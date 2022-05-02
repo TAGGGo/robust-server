@@ -1,0 +1,15 @@
+
+syntax = "proto2";
+
+message buy_req{
+  required int64 orderid = 1;
+}
+
+message cancel_order{
+  required int64 orderid = 1;
+}
+
+message AWCommands {
+    optional buy_req buy = 1;
+    optional cancel_order cancel = 2;
+}

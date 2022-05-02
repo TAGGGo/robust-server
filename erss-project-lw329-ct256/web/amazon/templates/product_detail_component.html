@@ -1,0 +1,21 @@
+{% for product in products %}
+<div class="col-10 mx-auto col-md-6 col-lg-4">
+    <div class="featured-container p-5">
+      <img src="/media/{{product.photo}}" alt="" class="img-fluid">
+      <span class="featured-search-icon" data-toggle="modal" data-target="#productModal">
+        <i class="fas fa-search"></i>
+      </span>
+      <input type="button" class="featured-store-link text-capitalize" onclick="addToChart('{{product.id}}')" value="add to cart"></input>
+    </div>
+    <h6 class="text-capitalize text-center my-2">
+      {{product.name}}
+    </h6>
+    <h6 class="text-center">
+      <span class="text-muted old-price mx-2">$200</span>
+      <span>${{product.price}}</span>
+    </h6>
+    <h6 class="text-center">
+      <span>Description: {{product.category_id__cat_name}}</span>
+    </h6>
+  </div>
+{% endfor %}

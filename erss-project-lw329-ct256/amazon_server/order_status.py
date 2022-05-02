@@ -1,0 +1,13 @@
+initialized = "initialized"
+purchasing = "purchasing"
+packing = "packing"
+packed = "packed"
+loading = "loading"
+loaded = "loaded"
+delivering = "delivering"
+delivered = "delivered"
+cancelled = "cancelled"
+
+packed_at = "packed_at"
+loaded_at = "loaded_at"
+delivered_at = "delivered_at"

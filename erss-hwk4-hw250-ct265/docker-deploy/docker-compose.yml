@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  db:
+      image: postgres
+      environment:
+              - POSTGRES_DB=stockexchange
+              - POSTGRES_USER=postgres
+              - POSTGRES_PASSWORD=123456
+      expose:
+        - "5432"
+      volumes:
+            - ./db.sql:/docker-entrypoint-initdb.d/db.sql
+            - data-volume:/var/lib/postgresql/data
+  stockexchange:
+      build: ./src
+      user: root
+      command: "/myroot/runserver.sh"
+      ports:
+        - "12345:12345"
+      depends_on: 
+        - db
+volumes:
+   data-volume: 
